@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart} from 'chart.js';
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { Label,SingleDataSet, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, MultiDataSet  } from 'ng2-charts';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +10,12 @@ import { Chart} from 'chart.js';
 })
 export class DashboardComponent implements OnInit {
   chart = [];
-  constructor() { }
+  constructor() {
+    monkeyPatchChartJsTooltip();
+    monkeyPatchChartJsLegend();
+   }
+
+   //progress bar
   color1 = 'primary'; 
   value1 = 80;
   bufferValue1 = 75;
@@ -16,73 +23,43 @@ export class DashboardComponent implements OnInit {
   color2 = 'primary'; 
   value2 = 30;
   bufferValue2 = 25;
-  ngOnInit(): any {}
-
-/*ngOnInit()  {
-  this.chart = new Chart('canvas', {
-    type: 'line',
-    data: {
-      labels: ['a','b','c','d', 'e', 'f', 'g', 'h' ],
-      datasets:[
-        {
-          label:'My first dataset',
-          data: [1,3,5,10,56,65,53.567,567,567],
-          backgroundColor: 'red',
-          borderColor: 'red',
-          fill: false,
-        },
-        {
-        label:'My second dataset',
-        data: [1,3,5,10,56,65,53.567,567,567].reverse(),
-        backgroundColor: 'blue',
-        borderColor: 'blue',
-        fill: false,
-        }
-      ]
-    }
-  })
-
-  }*/
 
 
+ngOnInit(): any{}
 
+//bar chart
+public barChartOptions: ChartOptions = {
+  responsive: true,
+};
+public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+public barChartType: ChartType = 'bar';
+public barChartLegend = true;
+public barChartPlugins = [];
 
+public barChartData: ChartDataSets[] = [
+  { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
+  { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+];
 
+//piechart
 
-/*  public chartType: string = 'bar';
+public pieChartOptions: ChartOptions = {
+  responsive: true,
+};
+public pieChartLabels: Label[] = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
+public pieChartData: SingleDataSet = [300, 500, 100];
+public pieChartType: ChartType = 'pie';
+public pieChartLegend = true;
+public pieChartPlugins = [];
 
-  public chartDatasets: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' }
+  // Doughnut
+  public doughnutChartLabels: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  public doughnutChartData: MultiDataSet = [
+    [350, 450, 100],
+    [50, 150, 120],
+    [250, 130, 70],
   ];
+  public doughnutChartType: ChartType = 'doughnut';
 
-  public chartLabels: Array<any> = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
 
-  public chartColors: Array<any> = [
-    {
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
-      borderWidth: 2,
-    }
-  ];
-
-  public chartOptions: any = {
-    responsive: true
-  };
-  public chartClicked(e: any): void { }
-  public chartHovered(e: any): void { }
- */
 }

@@ -1,4 +1,4 @@
-.example-spacer {
+/*example-spacer {
     flex: 1 1 auto;
   }
   .mat-toolbar.mat-primary {
@@ -10,4 +10,17 @@
     bottom: 0;
     width: 100%;
   
-  }
+  }*/
+
+footer{
+  background-color: rgb(48, 44, 44) ;
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+a{
+  list-style: none;
+  color: white;
+}
+a:hover {
+  color:whitesmoke;
+}

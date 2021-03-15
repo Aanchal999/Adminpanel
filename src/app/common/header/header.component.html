@@ -7,6 +7,34 @@
         <mat-icon>menu</mat-icon>
       </button>
       <span>My App</span>
+
+      <div class="form-inline">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
+          </li>
+    
+          <!-- Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </li>
+    
+        </ul>
+
+      </div>
+
+
       <span class="example-spacer"></span>
       <button  mat-icon-button class="example-icon favorite-icon" >
         <mat-icon>favorite</mat-icon>
@@ -19,31 +47,31 @@
 </mat-sidenav-container>
 
 <mat-sidenav class="sidebar" #sidenav (keydown.escape)="close()" disableClose>
-  <!--<p><button mat-button (click)="close()">Toggle</button></p>-->
+ 
   <a (click)="close()"><i class="fa fa-2x fa-arrow-circle-o-left" aria-hidden="true"></i></a>
 
   <div class="sidebar-collapse">
     <ul>
       <li>
-        <a href="#"><i class="fa fa-2x fa-dashboard"></i> Dashboard</a>
+        <a href="#"><i class="fa fa-dashboard"></i> Dashboard</a>
       </li>
       <li>
-        <a href="#"><i class="fa fa-2x fa-desktop"></i> UI Elements</a>
+        <a href="#"><i class="fa  fa-desktop"></i> UI Elements</a>
       </li>
       <li>
-        <a href="#"><i class="fa fa-2x fa-bar-chart"></i> Charts</a>
+        <a href="#"><i class="fa fa-bar-chart"></i> Charts</a>
       </li>
       <li>
-        <a href="#"><i class="fa fa-2x fa-tasks"></i> Tabs & Panels</a>
+        <a href="#"><i class="fa  fa-tasks"></i> Tabs & Panels</a>
       </li>
       <li>
-        <a href="#"><i class="fa fa-2x fa-table"></i> Responsive Tables</a>
+        <a href="#"><i class="fa  fa-table"></i> Responsive Tables</a>
       </li>
       <li>
-        <a href="#"><i class="fa fa-2x fa-pencil-square-o"></i> Forms</a>
+        <a href="#"><i class="fa  fa-pencil-square-o"></i> Forms</a>
       </li>
       <li>
-        <a href="#"><i class="fa fa-2x fa-file"></i> Empty Page</a>
+        <a href="#"><i class="fa fa-file"></i> Empty Page</a>
       </li>
     </ul>
 
