@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<div class="container-fluid jumbotron" >
+    <div class="row">
+        <div class="col-lg-9 col-md-9">
+           <h2>Charts</h2>
+           <p>home/Charts</p>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <button type="button" class="btn btn-lg" id="upgrade"> Upgrade</button>
+        </div>
+      </div>
+
+
+<div class="row">
+    <div class="col-lg-5 col-md-5 mat-card " id="card">
+        <canvas baseChart
+        [datasets]="bubbleChartData"
+        [options]="bubbleChartOptions"
+        [legend]="bubbleChartLegend"
+        [chartType]="bubbleChartType">
+      </canvas>
+    
+    </div>
+  
+    <div class="col-lg-5 col-md-5 mat-card" id="card">
+        <canvas baseChart
+        [datasets]="radarChartData"
+        [options]="radarChartOptions"
+        [labels]="radarChartLabels"
+        [chartType]="radarChartType">
+      </canvas>
+   
+    </div>
+    
+  </div>
+
+
+  
+<div class="row">
+    <div class="col-lg-5 col-md-5 mat-card " id="card">
+      <canvas baseChart
+      [data]="polarAreaChartData"
+      [labels]="polarAreaChartLabels"
+      [legend]="polarAreaLegend"
+      [chartType]="polarAreaChartType">
+    </canvas>
+      
+    
+    </div>
+  
+    <div class="col-lg-5 col-md-5 mat-card linechart" id="card">
+    
+      <canvas baseChart 
+      [data]="pieChartData" 
+      [labels]="pieChartLabels" 
+      [chartType]="pieChartType"
+      [options]="pieChartOptions"
+      [plugins]="pieChartPlugins"
+      [legend]="pieChartLegend">
+    </canvas>
+    </div>
+    
+  </div>
+
+</div>

@@ -2,13 +2,16 @@
     flex: 1 1 auto;
   }
 
+  mat-toolbar{
+    background-color: #009efb!important;
+  }
   .sidebar{
     width: 300px;
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: rgb(68, 66, 67);
+    background-color: #f62d51;
   }
 
 a{

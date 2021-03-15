@@ -41,15 +41,27 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
-
 import { AppRoutingModule } from './app-routing.module';
+import { UielementsComponent } from './sidebar/uielements/uielements.component';
+import { PanelsComponent } from './sidebar/panels/panels.component';
+import { ResponsivetablesComponent } from './sidebar/responsivetables/responsivetables.component';
+import { FormsComponent } from './sidebar/forms/forms.component';
+import { ChartsComponent } from './sidebar/charts/charts.component';
+import { EmptypageComponent } from './sidebar/emptypage/emptypage.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    UielementsComponent,
+    PanelsComponent,
+    ResponsivetablesComponent,
+    FormsComponent,
+    ChartsComponent,
+    EmptypageComponent,
   ],
   imports: [
     BrowserModule,
