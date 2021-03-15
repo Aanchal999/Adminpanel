@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<mat-sidenav-container class="example-container">
+
+<mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My App</span>
+      <span class="example-spacer"></span>
+      <button  mat-icon-button class="example-icon favorite-icon" >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+</mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-sidenav class="sidebar" #sidenav (keydown.escape)="close()" disableClose>
+  <!--<p><button mat-button (click)="close()">Toggle</button></p>-->
+  <a (click)="close()"><i class="fa fa-2x fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+
+  <div class="sidebar-collapse">
+    <ul>
+      <li>
+        <a href="#"><i class="fa fa-2x fa-dashboard"></i> Dashboard</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-2x fa-desktop"></i> UI Elements</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-2x fa-bar-chart"></i> Charts</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-2x fa-tasks"></i> Tabs & Panels</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-2x fa-table"></i> Responsive Tables</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-2x fa-pencil-square-o"></i> Forms</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-2x fa-file"></i> Empty Page</a>
+      </li>
+    </ul>
+
+  </div>
+</mat-sidenav>
+
+
+
+
+
