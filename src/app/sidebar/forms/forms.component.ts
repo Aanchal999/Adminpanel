@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { NgModule} from '@angular/core';
 
 @Component({
   selector: 'app-forms',
@@ -7,17 +7,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./forms.component.scss']
 })
 export class FormsComponent implements OnInit {
-  options: FormGroup;
 
-  constructor(fb: FormBuilder) {
-    this.options = fb.group({
-      hideRequired: false,
-      floatLabel: 'auto',
-      name: ['', Validators.required]
-    });
-  }
-
-  
+  constructor() { }
 
   ngOnInit(): void {
   }

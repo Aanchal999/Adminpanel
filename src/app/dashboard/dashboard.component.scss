@@ -8,6 +8,7 @@
  
  .jumbotron{
     background-color:#f2f7f8!important;
+    margin-top: 20px;
  }
 #card{
    height: 180px;
@@ -52,9 +53,7 @@ a:hover {
    color:whitesmoke;
    background-color: rgb(207, 218, 241);
  }
- #upgrade{
-   background-color:#4CAF50;
-   color: white;
-   float: right;
 
-}
+ #arrow{
+    float: right;
+ }

@@ -6,8 +6,8 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<p>ertyuii</p>
 <div class="container-fluid jumbotron">
+
     <div class="row">
         <div class="col-lg-9 col-md-9">
            <h2>Forms</h2>
@@ -17,36 +17,86 @@
           <button type="button" class="btn btn-lg" id="upgrade"> Upgrade</button>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-lg-5 col-md-5 mat-card " id="card">
-            <form class="example-container" >
-                <mat-checkbox formControlName="hideRequired">Hide required marker</mat-checkbox>
-                <div>
-                  <label>Float label: </label>
-                  <mat-radio-group formControlName="floatLabel">
-                    <mat-radio-button value="auto">Auto</mat-radio-button>
-                    <mat-radio-button value="always">Always</mat-radio-button>
-                    <mat-radio-button value="never">Never</mat-radio-button>
-                  </mat-radio-group>
-                </div>
-            
-                <mat-form-field 
-                    [hideRequiredMarker]="options.value.hideRequired"
-                    [floatLabel]="options.value.floatLabel">
-                  <input matInput formControlName="name" placeholder="Simple placeholder" required>
+    <div class="row">
+      <div class=" col-lg-5 col-md-5 mat-card">
+          <form class="formwidth"  #myForm="ngForm">
+    <table class="fullwidth" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="fullwidth">
+                    <input matInput placeholder="First Name" id="firstname"  name="firstname">
                 </mat-form-field>
-            
-                <button type="submit" mat-raised-button color="primary">Submit</button>
-              </form>
+            </td>
+            <td>
+                <mat-form-field class="fullwidth">
+                    <input matInput placeholder="Last Name" id="lastname" name="lastname">
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+    <p>
+        <mat-form-field class="fullwidth">
+            <textarea matInput placeholder="Address" id="address"  name="address"></textarea>
+        </mat-form-field>
+    </p>
+    <table class="fullwidth" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="fullwidth">
+                    <input matInput placeholder="City" id="city" name="city">
+                </mat-form-field>
+            </td>
           
+            <td>
+                <mat-form-field class="fullwidth">
+                    <input matInput placeholder="State" id="state"  name="state">
+                </mat-form-field>
+            </td>
+        </tr>
+            <tr>
+            <td>
+                <mat-form-field class="fullwidth">
+                    <input matInput #postalcode maxlength="5" placeholder="Postal Code" id="postalcode"  name="postalcode">
+                 
+                </mat-form-field>
+            </td>
+            </tr>
         
-        </div>
-        <div class="col-lg-5 col-md-5 mat-card " id="card">
-          
-        
-        </div>
+    </table>
+    <p>
+        <button class="btn btn-lg" type="submit" md-raised-button>Submit</button>
+    </p>
+</form>
+     
+      </div>
+      
+      <div class="col-lg-5 col-md-5 mat-card " id="signup">
+        <form class="text-center border border-light p-5">
 
-        </div>
+            <h2>Subscribe</h2>
+           
+            <p>Join our mailing list. We write rarely, but only with the best content.</p>
+            <div>
+            <p>
+              <a href="" target="_blank">See the last newsletter</a>
+            </p>
+            </div>
+            <div>
+            <label>Name</label>
+            <input type="text"  class="form-control"  placeholder="Name">
+          
+           <label>Email</label>
+            <input type="email"  class="form-control " placeholder="E-mail">
+            </div>
+            <br>
+            <div>
+             <button class="btn btn-lg" type="submit">Sign in</button>
+            </div>
+          
+          
+          </form>
+
+      </div>
+
 
 </div>

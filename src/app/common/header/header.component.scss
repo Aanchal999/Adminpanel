@@ -5,6 +5,7 @@
   mat-toolbar{
     background-color: #009efb!important;
     color: white;
+    position:fixed;
   }
   .sidebar{
     width: 300px;
@@ -12,7 +13,7 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: #f62d51;
+    background-color: #ff3292;
   }
 
 a{

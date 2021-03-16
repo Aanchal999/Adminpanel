@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-card{
+    border-radius: 3%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 10px 10px 10px 10px;
+    
+ }
+ .mat-card:hover {
+    box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
+  }
+  
+  .jumbotron{
+     background-color:#f2f7f8!important;
+     margin-top: 20px;
+    
+  }
+  #upgrade{
+    background-color:#4CAF50;
+    color: white;
+    float: right;
+  }
+  
+  #th{
+      background-color: black;
+      color: white;
+  }
+  #tr:hover{
+      background-color: rgb(230, 221, 221);
+
+  }
