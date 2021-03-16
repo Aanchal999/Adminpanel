@@ -7,17 +7,20 @@ import { ResponsivetablesComponent } from './sidebar/responsivetables/responsive
 import { FormsComponent } from './sidebar/forms/forms.component';
 import { ChartsComponent } from './sidebar/charts/charts.component';
 import { EmptypageComponent } from './sidebar/emptypage/emptypage.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
-  {path: 'dashboard',component:DashboardComponent},
-  {path: 'uielements',component:UielementsComponent},
+  {path: 'dashboard',canActivate:[AuthGuard], component:DashboardComponent},
+  {path: 'login',component:LoginComponent},
   {path: 'panels',component:PanelsComponent},
   {path: 'responsivetables',component:ResponsivetablesComponent},
   {path: 'charts',component:ChartsComponent},
   {path: 'emptypage',component:EmptypageComponent},
   {path: 'forms',component:FormsComponent},
-  {path: '**',component:DashboardComponent}
+  {path: '**',component:LoginComponent},
+  
   
 ];
 
@@ -26,4 +29,13 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents =[DashboardComponent,FormsComponent,EmptypageComponent,ChartsComponent,ResponsivetablesComponent,UielementsComponent,PanelsComponent]
+export const routingComponents =[
+               DashboardComponent,
+               FormsComponent,
+               EmptypageComponent,
+               ChartsComponent,
+               ResponsivetablesComponent,
+               UielementsComponent,
+               PanelsComponent,
+               LoginComponent
+              ]

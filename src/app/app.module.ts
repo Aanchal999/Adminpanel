@@ -53,6 +53,7 @@ import { ChartsComponent } from './sidebar/charts/charts.component';
 import { EmptypageComponent } from './sidebar/emptypage/emptypage.component';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { FormsModule }   from '@angular/forms';
     FormsComponent,
     ChartsComponent,
     EmptypageComponent,
+    LoginComponent,
   ],
   imports: [
     FormsModule,
