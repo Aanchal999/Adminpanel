@@ -4,6 +4,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
+
+
+
 import {MatListModule} from '@angular/material/list';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -48,6 +51,7 @@ import { ResponsivetablesComponent } from './sidebar/responsivetables/responsive
 import { FormsComponent } from './sidebar/forms/forms.component';
 import { ChartsComponent } from './sidebar/charts/charts.component';
 import { EmptypageComponent } from './sidebar/emptypage/emptypage.component';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 
 @NgModule({
@@ -108,10 +112,20 @@ import { EmptypageComponent } from './sidebar/emptypage/emptypage.component';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+   
   ],
   providers: [],
-  bootstrap: [AppComponent, DashboardComponent,  HeaderComponent],
+  bootstrap: [
+    AppComponent,
+    DashboardComponent,
+    HeaderComponent, 
+    UielementsComponent,
+    PanelsComponent,
+    ResponsivetablesComponent,
+    FormsComponent,
+    ChartsComponent,
+    EmptypageComponent,],
   exports: [ChartsModule] 
 })
 export class AppModule { }
