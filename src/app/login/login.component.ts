@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginserviceService } from '../loginservice.service';
+import { HeaderComponent} from '../common/header/header.component';
+
 
 @Component({
   selector: 'app-login',
@@ -15,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+ 
 
   check(uname: string, p: string){
     var output = this.service.checkusernameandpassword(uname, p);
@@ -26,4 +29,5 @@ export class LoginComponent implements OnInit {
       this.msg ="Invalid Username or Password";
     }
   }
+
 }

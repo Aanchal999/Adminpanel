@@ -4,14 +4,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
-
-
-
 import {MatListModule} from '@angular/material/list';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
-
 import { ChartsModule } from 'ng2-charts';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatButtonModule} from '@angular/material/button';
@@ -54,7 +50,8 @@ import { EmptypageComponent } from './sidebar/emptypage/emptypage.component';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-
+import { AuthGuard } from './auth.guard';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +66,7 @@ import { LoginComponent } from './login/login.component';
     ChartsComponent,
     EmptypageComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     FormsModule,
@@ -119,7 +117,7 @@ import { LoginComponent } from './login/login.component';
     MatTreeModule,
    
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [
     AppComponent,
     DashboardComponent,

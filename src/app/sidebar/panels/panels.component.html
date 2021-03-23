@@ -19,6 +19,7 @@
 
 
   <div class="row">
+    <div class="col-lg-1 col-md-1 "></div>
     <div class="col-lg-4 col-md-4 ">
         <mat-card class="profile">
             
@@ -32,41 +33,66 @@
     </div>
        </mat-card>
       </div>
-      <div class="col-lg-8 col-md-8 mat-card">
-          <div class="form">
-            <p>
-                <mat-form-field appearance="legacy">
-                  <mat-label>Full Name</mat-label>
-                  <input matInput placeholder="Full Nmae">
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field appearance="legacy">
-                  <mat-label>Email</mat-label>
-                  <input matInput placeholder="Email">
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field appearance="legacy">
-                  <mat-label>Password</mat-label>
-                  <input matInput placeholder="Password">
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field appearance="legacy">
-                  <mat-label>Phone No.</mat-label>
-                  <input matInput placeholder="Phone No.">
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field appearance="legacy">
-                  <mat-label>Message</mat-label>
-                  <input matInput placeholder="Message">
-                </mat-form-field>
-              </p>
-              <button class="btn btn-lg" mat-raised-button color="accent">Submit</button>
-    
-          </div>
+      <div class="col-lg-6 col-md-6 mat-card" id="form">
+        <form class="text-center border border-light p-5"  #myForm="ngForm">
+          <table class="fullwidth" cellspacing="0">
+              <tr>
+                  <td>
+                      <mat-form-field class="fullwidth">
+                          <input matInput placeholder="First Name" id="firstname"  name="firstname">
+                      </mat-form-field>
+                  </td>
+                  <td>
+                      <mat-form-field class="fullwidth">
+                          <input matInput placeholder="Last Name" id="lastname" name="lastname">
+                      </mat-form-field>
+                  </td>
+              </tr>
+              
+          <tr>
+              <td>
+              <mat-form-field class="fullwidth">
+                  <input matInput placeholder="Email" id="Email"  name="Email" disabled>
+              </mat-form-field>
+          
+          </td>
+        </tr>
+          
+          <tr>
+              <td>
+              <mat-form-field class="fullwidth">
+                  <input matInput placeholder="Address" id="address"  name="address">
+              </mat-form-field>
+          
+          </td>
+        </tr>
+              <tr>
+                  <td>
+                      <mat-form-field class="fullwidth">
+                          <input matInput placeholder="City" id="city" name="city">
+                      </mat-form-field>
+                  </td>
+                
+                  <td>
+                      <mat-form-field class="fullwidth">
+                          <input matInput placeholder="State" id="state"  name="state">
+                      </mat-form-field>
+                  </td>
+              </tr>
+                  <tr>
+                  <td>
+                      <mat-form-field class="fullwidth">
+                          <input matInput #postalcode maxlength="5" placeholder="Postal Code" id="postalcode"  name="postalcode">
+                       
+                      </mat-form-field>
+                  </td>
+                  </tr>
+              
+          </table>
+          <p>
+              <button class="btn btn-lg" type="submit" md-raised-button>Update</button>
+          </p>
+        </form>
        
     </div>
     

@@ -6,29 +6,30 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<div class="container-fluid jumbotron" >
-    <div class="col-lg-3 col-md-3 "></div>
-    <div class="col-lg-6 col-md-6 mat-card " id="signup">
+<div class="container-fluid jumbotron">
+
+    <div class="col-lg-4 col-md-4 "></div>
+    <div class="col-lg-3 col-md-3 mat-card " id="signup">
         <form class="text-center border border-light p-5">
 
-            <h1 class="sign">SignUp!</h1>
+            
             <br>
             <div>
-            <label>Name</label>
-            <input type="text"  class="form-control" #u1 placeholder="Name">
+            <label>Username</label>
+            <input type="text"  class="form-control" #u1 placeholder="username">
           
-           <label>Email</label>
-            <input type="email"  class="form-control" #p2 placeholder="E-mail">
+           <label>Password</label>
+            <input type="password"  class="form-control" #p2 placeholder="password">
             </div>
             <br>
             <div>
-             <button (click)="check(u1.value, p2.value)" class="btn btn-lg" type="submit">Sign in</button>
+             <button (click)="check(u1.value, p2.value) " class="btn btn-lg" type="submit">Login</button>
             </div>
             <span>{{msg}}</span>
             <br>
             <div>
             <p>Not a member?</p>
-            <a href="#">Register</a>
+            <a href="/register">Register</a>
             </div>
           
           </form>
@@ -36,3 +37,4 @@
       </div>
       <div class="col-lg-3 col-md-3  "></div>
 </div>
+   

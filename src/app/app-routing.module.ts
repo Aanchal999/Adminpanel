@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './common/header/header.component';
 import { UielementsComponent } from './sidebar/uielements/uielements.component';
 import { PanelsComponent } from './sidebar/panels/panels.component';
 import { ResponsivetablesComponent } from './sidebar/responsivetables/responsivetables.component';
@@ -9,18 +10,20 @@ import { ChartsComponent } from './sidebar/charts/charts.component';
 import { EmptypageComponent } from './sidebar/emptypage/emptypage.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
   {path: 'dashboard',canActivate:[AuthGuard], component:DashboardComponent},
-  {path: 'login',component:LoginComponent},
-  {path: 'panels',component:PanelsComponent},
-  {path: 'responsivetables',component:ResponsivetablesComponent},
-  {path: 'charts',component:ChartsComponent},
-  {path: 'emptypage',component:EmptypageComponent},
-  {path: 'forms',component:FormsComponent},
+  {path: 'login', component:LoginComponent},
+  {path: 'panels',canActivate:[AuthGuard],component:PanelsComponent},
+  {path: 'emptypage', canActivate:[AuthGuard],component:EmptypageComponent},
+  {path: 'responsivetables',canActivate:[AuthGuard],component:ResponsivetablesComponent},
+  {path: 'charts',canActivate:[AuthGuard],component:ChartsComponent},
+  {path: 'register',component:RegisterComponent},
+  {path: 'forms',canActivate:[AuthGuard],component:FormsComponent},
   {path: '**',component:LoginComponent},
-  
+  {path: 'header',canActivate:[AuthGuard],component:HeaderComponent},
   
 ];
 
@@ -37,5 +40,7 @@ export const routingComponents =[
                ResponsivetablesComponent,
                UielementsComponent,
                PanelsComponent,
-               LoginComponent
+               LoginComponent,
+               RegisterComponent,
+               HeaderComponent,
               ]

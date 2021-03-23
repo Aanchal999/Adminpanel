@@ -36,7 +36,15 @@
 
 
       <span class="example-spacer"></span>
-      <a href ="/login" >Login</a>
+      
+      <form class="form-inline">
+        <div *ngIf="logIn"  >
+          <a  (click)="onClick()" class="btn btn-primary " type="submit">Login</a>
+        </div>
+        <div *ngIf="!logIn">
+          <a (click)="service.logOut()" class="btn btn-primary " type="submit">LogOut</a>
+        </div>
+      </form>
       <button  mat-icon-button class=" favorite-icon" >
         <mat-icon>favorite</mat-icon>
       </button>
