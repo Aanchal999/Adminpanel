@@ -10,13 +10,18 @@
 <div class="container-fluid jumbotron" >
     <div class=" col-lg-3 col-md-3"></div>
     <div class=" col-lg-5 col-md-5 mat-card">
-        <form class="text-center border border-light p-5"  #myForm="ngForm">
+        <form class="text-center border border-light p-5"  #myForm="ngForm"  >
   <table class="fullwidth" cellspacing="0">
       <tr>
           <td>
               <mat-form-field class="fullwidth">
-                  <input matInput placeholder="First Name" id="firstname"  name="firstname">
+                  <input formControlName="firstname"  matInput placeholder="First Name" id="firstname"  name="firstname" required>
+
+
+                  <mat-error *ngIf="register!.get('firstname')!.hasError('required')">Required</mat-error>
+
               </mat-form-field>
+
           </td>
           <td>
               <mat-form-field class="fullwidth">
@@ -66,7 +71,7 @@
       
   </table>
   <p>
-      <button class="btn btn-lg" type="submit" md-raised-button>Register</button>
+      <button class="btn btn-lg" type="submit"   md-raised-button>Register</button>
   </p>
   <div>
     <p>Already a member?</p>
