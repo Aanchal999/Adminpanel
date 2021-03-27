@@ -10,7 +10,8 @@ import { ChartsComponent } from './sidebar/charts/charts.component';
 import { EmptypageComponent } from './sidebar/emptypage/emptypage.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
-import { RegisterComponent } from './register/register.component';
+
+import { RegisterformComponent } from './registerform/registerform.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'emptypage', canActivate:[AuthGuard],component:EmptypageComponent},
   {path: 'responsivetables',canActivate:[AuthGuard],component:ResponsivetablesComponent},
   {path: 'charts',canActivate:[AuthGuard],component:ChartsComponent},
-  {path: 'register',component:RegisterComponent},
+ 
+  {path: 'registerform',component:RegisterformComponent},
   {path: 'forms',canActivate:[AuthGuard],component:FormsComponent},
   {path: '**',component:LoginComponent},
   {path: 'header',canActivate:[AuthGuard],component:HeaderComponent},
@@ -41,6 +43,6 @@ export const routingComponents =[
                UielementsComponent,
                PanelsComponent,
                LoginComponent,
-               RegisterComponent,
+              
                HeaderComponent,
               ]

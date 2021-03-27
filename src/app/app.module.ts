@@ -52,7 +52,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
-import { RegisterComponent } from './register/register.component';
+
+import { RegisterformComponent } from './registerform/registerform.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { RegisterComponent } from './register/register.component';
     ChartsComponent,
     EmptypageComponent,
     LoginComponent,
-    RegisterComponent,
+
+    RegisterformComponent,
   ],
   imports: [
     FormsModule,
