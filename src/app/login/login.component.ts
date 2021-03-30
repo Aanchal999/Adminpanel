@@ -12,12 +12,14 @@ import { HeaderComponent} from '../common/header/header.component';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service: LoginserviceService , private routes: Router) { }
+  constructor(private service: LoginserviceService , private routes: Router, private headerComponent:HeaderComponent) { }
   msg:string="";
 
   ngOnInit(): void {
   }
  
+
+
 
   check(uname: string, p: string){
     var output = this.service.checkusernameandpassword(uname, p);

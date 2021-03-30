@@ -3,13 +3,15 @@
 
 <mat-sidenav-content>
     <mat-toolbar >
+      <div class="form-inline">
+        <ul class="navbar-nav mr-auto">
+          <li>
       <button mat-icon-button class="example-icon" (click)="sidenav.open()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>My App</span>
+      <a>My App</a>
+    </li>
 
-      <div class="form-inline">
-        <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
           </li>
@@ -38,11 +40,8 @@
       <span class="example-spacer"></span>
       
       <form class="form-inline">
-        <div *ngIf="logIn"  >
-          <a  (click)="onClick()" class="btn btn-primary " type="submit">Login</a>
-        </div>
-        <div *ngIf="!logIn">
-          <a (click)="service.logOut()" class="btn btn-primary " type="submit">LogOut</a>
+        <div >
+          <a (click)="service.logOut()" class="btn btn-lg button" type="submit">LogOut</a>
         </div>
       </form>
       <button  mat-icon-button class=" favorite-icon" >

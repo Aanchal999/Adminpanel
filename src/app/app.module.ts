@@ -122,7 +122,7 @@ import { RegisterformComponent } from './registerform/registerform.component';
     MatTreeModule,
    
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, HeaderComponent,],
   bootstrap: [
     AppComponent,
     DashboardComponent,

@@ -19,13 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit():void{
-    this.logIn=!this.logIn;
-  }
-  logIn:boolean=false;
-  buttonItemT:string="Sign up";
-  buttonItemF:string="Log out";
-  onClick(){
-    this.logIn=!this.logIn;
+ 
   }
 
 

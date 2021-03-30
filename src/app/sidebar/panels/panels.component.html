@@ -12,6 +12,7 @@
     <div class="col-lg-9 col-md-9">
        <h2>Profiles</h2>
        <p>home/profiles</p>
+       <p>{{username}}</p>
     </div>
     <div class="col-lg-3 col-md-3">
       <button type="button" class="btn btn-lg" id="upgrade"> Upgrade</button>
@@ -35,64 +36,122 @@
        </mat-card>
       </div>
       <div class="col-lg-6 col-md-6 mat-card" id="form">
-        <form class="text-center border border-light p-5"  #myForm="ngForm">
-          <table class="fullwidth" cellspacing="0">
-              <tr>
-                  <td>
-                      <mat-form-field class="fullwidth">
-                          <input matInput placeholder="First Name" id="firstname"  name="firstname">
-                      </mat-form-field>
-                  </td>
-                  <td>
-                      <mat-form-field class="fullwidth">
-                          <input matInput placeholder="Last Name" id="lastname" name="lastname">
-                      </mat-form-field>
-                  </td>
-              </tr>
-              
-          <tr>
-              <td>
-              <mat-form-field class="fullwidth">
-                  <input matInput placeholder="Email" id="Email"  name="Email" disabled>
-              </mat-form-field>
-          
-          </td>
-        </tr>
-          
-          <tr>
-              <td>
-              <mat-form-field class="fullwidth">
-                  <input matInput placeholder="Address" id="address"  name="address">
-              </mat-form-field>
-          
-          </td>
-        </tr>
-              <tr>
-                  <td>
-                      <mat-form-field class="fullwidth">
-                          <input matInput placeholder="City" id="city" name="city">
-                      </mat-form-field>
-                  </td>
+               
+        <form #signupForm="ngForm" class="text-center border border-light p-5" *ngFor="let fo of form_el">
+            <tr>
+                <td >
+                   
+                        <mat-form-field class="fullwidth">
+                        <input [(ngModel)]="fo.item1" matInput name="f1" type="text"  placeholder="First name " ngModel required #f1="ngModel" >
+                       </mat-form-field>
+                       <div *ngIf="f1.invalid && (f1.dirty || f1.touched)"
+                       class="alert alert-danger">                               
+                       <mat-error *ngIf="f1.hasError('required')">
+                        First Name is required.
+                       </mat-error>
+                     </div>
+                    
+                    </td>
+
+                <td>
+                   
+                    <mat-form-field class="fullwidth">
+                    <input [(ngModel)]="fo.item2" matInput name="l1" type="text"  placeholder="Lastname" ngModel required #l1="ngModel" >
+                   </mat-form-field>
+                   <div *ngIf="l1.invalid && (l1.dirty || l1.touched)"
+                   class="alert alert-danger">                               
+                   <div *ngIf="l1.hasError('required')">
+                    Last Name is required.
+                   </div>
+                  </div>
                 
-                  <td>
-                      <mat-form-field class="fullwidth">
-                          <input matInput placeholder="State" id="state"  name="state">
-                      </mat-form-field>
-                  </td>
-              </tr>
-                  <tr>
-                  <td>
-                      <mat-form-field class="fullwidth">
-                          <input matInput #postalcode maxlength="5" placeholder="Postal Code" id="postalcode"  name="postalcode">
-                       
-                      </mat-form-field>
-                  </td>
-                  </tr>
-              
-          </table>
-          <p>
-              <button class="btn btn-lg" type="submit" md-raised-button>Update</button>
-          </p>
+            </td>
+
+
+        </tr>
+           
+            <tr>
+                <td>
+                <mat-form-field>
+                <input [(ngModel)]="fo.item4" type="tel" matInput name="f2" placeholder="Contact no. " ngModel required minlength="10" maxlength="10" #f2="ngModel">    
+            </mat-form-field>
+                <div *ngIf="f2.invalid && (f2.dirty || f2.touched)"
+                            class="alert alert-danger">                               
+                            <div *ngIf="f2.hasError('required')">
+                             Contact No. is required.
+                            </div>
+                            <div *ngIf="f2.hasError('minlength')">
+                                Enter valid No. of length 10.
+                            </div>
+                            <div *ngIf="f2.hasError('maxlength')">
+                                Enter valid No. of length 10.
+                            </div>
+                        </div>
+                        </td>
+             
+                <td>
+                    
+                    <mat-form-field>
+                        <input  [(ngModel)]="fo.item5" name="a1" matInput type="text" placeholder="Address" ngModel required #a1="ngModel">
+                    </mat-form-field>
+                        <div *ngIf="a1.invalid && (a1.dirty || a1.touched)"
+                            class="alert alert-danger">                               
+                            <div *ngIf="a1.hasError('required')">
+                             Address is required.
+                            </div>
+                        </div>
+                   
+                    </td>
+            </tr>
+
+            <tr>
+                <td>
+                 <mat-form-field>
+                 <input  [(ngModel)]="fo.item3" type="email" matInput name="e1"  placeholder=" E-mail ID" ngModel required email #e1="ngModel"> 
+             </mat-form-field>
+                 <div *ngIf="e1.invalid && (e1.dirty || e1.touched)"
+                             class="alert alert-danger">                               
+                             <div *ngIf="e1.hasError('required')">
+                              E-mail is required.
+                             </div>
+                             <div *ngIf="e1.hasError('email')">
+                                 Enter a valid E-mail
+                             </div>
+                         </div>
+                         </td>
+                         </tr>
+         
+            <tr>
+                <td>
+                <mat-form-field>
+                        <input [(ngModel)]="fo.item10" name="p1" type="password" matInput placeholder="Password " ngModel required minlength="6" #p1="ngModel">
+                    </mat-form-field>
+                        <div *ngIf="p1.invalid && (p1.dirty || p1.touched)"
+                            class="alert alert-danger">                               
+                            <div *ngIf="p1.hasError('required')">
+                             Please Set Password is required.
+                            </div>
+                            <div *ngIf="p1.hasError('minlength')">
+                                Minimum length is 6 characters.
+                            </div>
+                        </div>
+                    
+                    </td>
+                <td>
+                <mat-form-field>
+                        <input [(ngModel)]="fo.item11" name="p2" type="password" matInput placeholder="Confirm Password" ngModel required   #p2="ngModel">
+                    </mat-form-field>
+                        <div class="alert alert-danger" *ngIf="fo.item10!=fo.item11 && p2.touched" >              
+                            Password not matching
+                          </div>
+                        </td>
+                                    
+                </tr>
+         <div class="row">
+                <button  type="reset" class="btn btn-lg clear"  md-raised-button >Submit</button>
+         </div>
+
+                 
         </form>
        
     </div>

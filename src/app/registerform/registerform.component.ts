@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, NgForm } from '@angular/forms';
+import { UserService } from './user.service';
+import { UserDTO} from './userDTO';
 
 @Component({
   selector: 'app-registerform',
@@ -8,7 +11,8 @@ import { FormGroup, NgForm } from '@angular/forms';
 })
 export class RegisterformComponent implements OnInit {
 
-
+  signup:any={};
+  
   user:any={};
  // signupForm!: FormGroup;
 
@@ -21,23 +25,10 @@ export class RegisterformComponent implements OnInit {
   {
     this.user=Object.assign(this.user,signupForm.value);
    // localStorage.setItem('user',JSON.stringify(this.user));
-    this.addUser(this.user);
+    this.userService.addUser(this.user);
+    this.routes.navigate(['/login']);
   }
-  addUser(user: any)
-  {
-    let users:any[]=[];
-    
-    if(localStorage.getItem('Users'))
-    {
-      users=JSON.parse(localStorage.getItem('Users')!);
-      users=[user,...users];//...is a spread operator that allows elements of array to expand in existing array
-    }
-    else
-    {
-      users=[user];
-    }
-    localStorage.setItem('Users',JSON.stringify(user));
-  }
+
  
   form_el=[{'item1':'','item2':'','item3':'','item4':'','item5':'','item6':'','item7':'','item8':'Himachal Pradesh','item9':'','item10':'','item11':''}]
   result:any=[{}];
@@ -50,7 +41,7 @@ export class RegisterformComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private routes: Router,private userService:UserService) { }
 
 
 }
