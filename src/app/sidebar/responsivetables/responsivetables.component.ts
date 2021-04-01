@@ -11,19 +11,20 @@ export interface PeriodicElement {
   position: number;
   weight: number;
   symbol: string;
+  cost: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H',cost: 5},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He',cost: 67},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li',cost: 234},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be',cost: 3456},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B',cost: 12345},
+  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C',cost: 123456},
+  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N',cost: 1234567},
+  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O',cost: 12345678},
+  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F',cost: 1234567800},
+  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne',cost: 12345678900},
 ];
 
 @Component({
@@ -34,7 +35,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class  ResponsivetablesComponent implements AfterViewInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'cost'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatSort) public sort: MatSort;
@@ -46,7 +47,7 @@ export class  ResponsivetablesComponent implements AfterViewInit {
   }
 
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter=filterValue.trim().toLowerCase();
+  applyFilter(filterValue: Event) {
+    this.dataSource.filter=((<HTMLInputElement>filterValue.target).value).toLowerCase().trim();
   }
 }

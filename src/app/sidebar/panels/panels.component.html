@@ -35,18 +35,20 @@
     </div>
        </mat-card>
       </div>
-      <div class="col-lg-6 col-md-6 mat-card" id="form">
+      <div class="col-lg-6 col-md-6 mat-card" id="form"  >
                
-        <form #signupForm="ngForm" class="text-center border border-light p-5" *ngFor="let fo of form_el">
-            <tr>
-                <td >
+        <form #signupForm="ngForm" class="text-center border border-light p-5" >
+        
+          <table >
+            
+            <tr >
+                <td  >
                    
-                        <mat-form-field class="fullwidth">
-                        <input [(ngModel)]="fo.item1" matInput name="f1" type="text"  placeholder="First name " ngModel required #f1="ngModel" >
+                        <mat-form-field class="fullwidth" >
+                        <input matInput name="fn" type="text"  placeholder="firstname" ngModel required #fn="ngModel" >
                        </mat-form-field>
-                       <div *ngIf="f1.invalid && (f1.dirty || f1.touched)"
-                       class="alert alert-danger">                               
-                       <mat-error *ngIf="f1.hasError('required')">
+                       <div *ngIf="fn.invalid && (fn.dirty || fn.touched)">                               
+                       <mat-error *ngIf="fn.hasError('required')">
                         First Name is required.
                        </mat-error>
                      </div>
@@ -56,13 +58,12 @@
                 <td>
                    
                     <mat-form-field class="fullwidth">
-                    <input [(ngModel)]="fo.item2" matInput name="l1" type="text"  placeholder="Lastname" ngModel required #l1="ngModel" >
+                    <input  matInput name="l1" type="text"  placeholder="Lastname" ngModel required #ln="ngModel" >
                    </mat-form-field>
-                   <div *ngIf="l1.invalid && (l1.dirty || l1.touched)"
-                   class="alert alert-danger">                               
-                   <div *ngIf="l1.hasError('required')">
+                   <div *ngIf="ln.invalid && (ln.dirty || ln.touched)">                               
+                   <mat-error *ngIf="ln.hasError('required')">
                     Last Name is required.
-                   </div>
+                   </mat-error>
                   </div>
                 
             </td>
@@ -73,32 +74,30 @@
             <tr>
                 <td>
                 <mat-form-field>
-                <input [(ngModel)]="fo.item4" type="tel" matInput name="f2" placeholder="Contact no. " ngModel required minlength="10" maxlength="10" #f2="ngModel">    
+                <input  type="tel" matInput name="f2" placeholder="Contact no. " ngModel required minlength="10" maxlength="10" #cn="ngModel">    
             </mat-form-field>
-                <div *ngIf="f2.invalid && (f2.dirty || f2.touched)"
-                            class="alert alert-danger">                               
-                            <div *ngIf="f2.hasError('required')">
+                <div *ngIf="cn.invalid && (cn.dirty || cn.touched)">                               
+                            <mat-error *ngIf="cn.hasError('required')">
                              Contact No. is required.
-                            </div>
-                            <div *ngIf="f2.hasError('minlength')">
+                            </mat-error>
+                            <mat-error *ngIf="cn.hasError('minlength')">
                                 Enter valid No. of length 10.
-                            </div>
-                            <div *ngIf="f2.hasError('maxlength')">
+                            </mat-error>
+                            <mat-error *ngIf="cn.hasError('maxlength')">
                                 Enter valid No. of length 10.
-                            </div>
+                            </mat-error>
                         </div>
                         </td>
              
                 <td>
                     
                     <mat-form-field>
-                        <input  [(ngModel)]="fo.item5" name="a1" matInput type="text" placeholder="Address" ngModel required #a1="ngModel">
+                        <input   name="a1" matInput type="text" placeholder="Address" ngModel required #ad="ngModel">
                     </mat-form-field>
-                        <div *ngIf="a1.invalid && (a1.dirty || a1.touched)"
-                            class="alert alert-danger">                               
-                            <div *ngIf="a1.hasError('required')">
+                        <div *ngIf="ad.invalid && (ad.dirty || ad.touched)">                               
+                            <mat-error *ngIf="ad.hasError('required')">
                              Address is required.
-                            </div>
+                            </mat-error>
                         </div>
                    
                     </td>
@@ -107,48 +106,41 @@
             <tr>
                 <td>
                  <mat-form-field>
-                 <input  [(ngModel)]="fo.item3" type="email" matInput name="e1"  placeholder=" E-mail ID" ngModel required email #e1="ngModel"> 
+                 <input  type="email" matInput name="e1"  placeholder=" E-mail ID" ngModel required disabled email #em="ngModel"> 
              </mat-form-field>
-                 <div *ngIf="e1.invalid && (e1.dirty || e1.touched)"
-                             class="alert alert-danger">                               
-                             <div *ngIf="e1.hasError('required')">
-                              E-mail is required.
-                             </div>
-                             <div *ngIf="e1.hasError('email')">
-                                 Enter a valid E-mail
-                             </div>
-                         </div>
+           
                          </td>
                          </tr>
          
             <tr>
                 <td>
-                <mat-form-field>
-                        <input [(ngModel)]="fo.item10" name="p1" type="password" matInput placeholder="Password " ngModel required minlength="6" #p1="ngModel">
+                <mat-form-field >
+                        <input  name="p1" type="password" matInput placeholder="Password " ngModel required minlength="6" #p1="ngModel">
                     </mat-form-field>
-                        <div *ngIf="p1.invalid && (p1.dirty || p1.touched)"
-                            class="alert alert-danger">                               
-                            <div *ngIf="p1.hasError('required')">
+                        <div *ngIf="p1.invalid && (p1.dirty || p1.touched)">                               
+                            <mat-error *ngIf="p1.hasError('required')">
                              Please Set Password is required.
-                            </div>
-                            <div *ngIf="p1.hasError('minlength')">
+                            </mat-error>
+                            <mat-error *ngIf="p1.hasError('minlength')">
                                 Minimum length is 6 characters.
-                            </div>
+                            </mat-error>
                         </div>
                     
                     </td>
                 <td>
                 <mat-form-field>
-                        <input [(ngModel)]="fo.item11" name="p2" type="password" matInput placeholder="Confirm Password" ngModel required   #p2="ngModel">
+                        <input name="p2" type="password" matInput placeholder="Confirm Password" ngModel required   #p2="ngModel">
                     </mat-form-field>
-                        <div class="alert alert-danger" *ngIf="fo.item10!=fo.item11 && p2.touched" >              
+                        <mat-error  *ngIf="p1!=p2 && p2.touched" >              
                             Password not matching
-                          </div>
+                          </mat-error>
                         </td>
                                     
                 </tr>
+              
+          </table>
          <div class="row">
-                <button  type="reset" class="btn btn-lg clear"  md-raised-button >Submit</button>
+                <button  type="submit" class="btn btn-lg "  md-raised-button >Submit</button>
          </div>
 
                  

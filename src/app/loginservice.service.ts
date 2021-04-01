@@ -19,6 +19,9 @@ export class LoginserviceService {
     }
   }
 
+  userList:Array<any> = JSON.parse(localStorage.getItem('Users')||'{}');
+
+
  logOut(){
   localStorage.removeItem('username');
   this.routes.navigate(['/login'])
