@@ -37,7 +37,7 @@
       </div>
       <div class="col-lg-6 col-md-6 mat-card" id="form"  >
                
-        <form #signupForm="ngForm" class="text-center border border-light p-5" >
+        <form #signupForm="ngForm" class="text-center border border-light p-5"  *ngFor="let item of userList">
         
           <table >
             
@@ -45,7 +45,7 @@
                 <td  >
                    
                         <mat-form-field class="fullwidth" >
-                        <input matInput name="fn" type="text"  placeholder="firstname" ngModel required #fn="ngModel" >
+                        <input matInput name="fn" type="text"  placeholder="{{item.f1}}" ngModel required #fn="ngModel" >
                        </mat-form-field>
                        <div *ngIf="fn.invalid && (fn.dirty || fn.touched)">                               
                        <mat-error *ngIf="fn.hasError('required')">
@@ -58,7 +58,7 @@
                 <td>
                    
                     <mat-form-field class="fullwidth">
-                    <input  matInput name="l1" type="text"  placeholder="Lastname" ngModel required #ln="ngModel" >
+                    <input  matInput name="l1" type="text"  placeholder="{{item.l1}}" ngModel required #ln="ngModel" >
                    </mat-form-field>
                    <div *ngIf="ln.invalid && (ln.dirty || ln.touched)">                               
                    <mat-error *ngIf="ln.hasError('required')">
@@ -74,7 +74,7 @@
             <tr>
                 <td>
                 <mat-form-field>
-                <input  type="tel" matInput name="f2" placeholder="Contact no. " ngModel required minlength="10" maxlength="10" #cn="ngModel">    
+                <input  type="tel" matInput name="f2" placeholder="{{item.f2}} " ngModel required minlength="10" maxlength="10" #cn="ngModel">    
             </mat-form-field>
                 <div *ngIf="cn.invalid && (cn.dirty || cn.touched)">                               
                             <mat-error *ngIf="cn.hasError('required')">
@@ -92,7 +92,7 @@
                 <td>
                     
                     <mat-form-field>
-                        <input   name="a1" matInput type="text" placeholder="Address" ngModel required #ad="ngModel">
+                        <input   name="a1" matInput type="text" placeholder="{{item.a1}}" ngModel required #ad="ngModel">
                     </mat-form-field>
                         <div *ngIf="ad.invalid && (ad.dirty || ad.touched)">                               
                             <mat-error *ngIf="ad.hasError('required')">
@@ -106,7 +106,7 @@
             <tr>
                 <td>
                  <mat-form-field>
-                 <input  type="email" matInput name="e1"  placeholder=" E-mail ID" ngModel required disabled email #em="ngModel"> 
+                 <input  type="email" matInput name="e1"  placeholder=" {{item.e1}}" ngModel required disabled email #em="ngModel"> 
              </mat-form-field>
            
                          </td>
@@ -115,7 +115,7 @@
             <tr>
                 <td>
                 <mat-form-field >
-                        <input  name="p1" type="password" matInput placeholder="Password " ngModel required minlength="6" #p1="ngModel">
+                        <input  name="p1" type="password" matInput placeholder="{{item.p1}}" ngModel required minlength="6" #p1="ngModel">
                     </mat-form-field>
                         <div *ngIf="p1.invalid && (p1.dirty || p1.touched)">                               
                             <mat-error *ngIf="p1.hasError('required')">
@@ -129,7 +129,7 @@
                     </td>
                 <td>
                 <mat-form-field>
-                        <input name="p2" type="password" matInput placeholder="Confirm Password" ngModel required   #p2="ngModel">
+                        <input name="p2" type="password" matInput placeholder="{{item.p2}}" ngModel required   #p2="ngModel">
                     </mat-form-field>
                         <mat-error  *ngIf="p1!=p2 && p2.touched" >              
                             Password not matching

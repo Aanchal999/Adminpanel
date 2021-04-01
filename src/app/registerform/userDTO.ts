@@ -5,4 +5,5 @@ export interface UserDTO {
     a1: string;
     e1:string;
     p1:string;
+    p2:string;
 }

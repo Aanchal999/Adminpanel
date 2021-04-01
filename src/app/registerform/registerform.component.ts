@@ -27,6 +27,10 @@ export class RegisterformComponent implements OnInit {
    // localStorage.setItem('user',JSON.stringify(this.user));
     this.userService.addUser(this.user);
     this.routes.navigate(['/login']);
+    this.alert("alert", "loading component");
+  }
+  alert(arg0: string, arg1: string) {
+    throw new Error('subitted successfully');
   }
 
  
