@@ -8,19 +8,38 @@ export class LoginserviceService {
 
   constructor( private routes: Router) { }
 
+  //checkusernameandpassword(uname:string, pwd: string)
+  //{
+    //if(uname == "Aanchal" && pwd == "123" ){
+      //localStorage.setItem('username', "Aanchal");
+      //return true;
+    //}
+    //else{
+      //return false;
+    //}
+  //}
+
+
+
+
   checkusernameandpassword(uname:string, pwd: string)
   {
-    if(uname == "Aanchal" && pwd == "123" ){
-      localStorage.setItem('username', "Aanchal");
+
+  let keys : any = Object.keys(localStorage);
+for(let i = 0 ;i< keys.length; i++){
+
+    let userList = JSON.parse(localStorage.getItem(keys[i])||'{}');
+    if(uname == keys[i] && pwd == userList.p1)
+    {
+      localStorage.setItem('username', JSON.stringify(userList));
       return true;
     }
-    else{
-      return false;
-    }
-  }
-
-  userList:Array<any> = JSON.parse(localStorage.getItem('Users')||'{}');
+    
   
+  }
+  return false;
+}
+ 
 
 
  logOut(){
