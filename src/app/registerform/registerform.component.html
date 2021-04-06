@@ -7,7 +7,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <div class="container-fluid jumbotron" >
-    <div class=" col-lg-3 col-md-3"></div>
+    <div class=" col-lg-4 col-md-4"></div>
     <div class=" col-lg-5 col-md-5 mat-card">
     <div class="card-header">
       <h2>Sign-Up</h2>
@@ -77,13 +77,9 @@
                         </td>
                 </tr>
 
-
-
-
                <tr>
 
-                
-                    <td>
+                <td>
                         
                         <mat-form-field>
                             <input [(ngModel)]="signup.country" matInput name="country" type="text"   placeholder="Country" ngModel required #country="ngModel">
@@ -127,14 +123,15 @@
                 <tr>
                     <td>
                      <mat-form-field>
-                     <input  [(ngModel)]="fo.item3" type="email" matInput name="e1"  placeholder=" E-mail ID" ngModel required email #e1="ngModel"> 
+                     <input  [(ngModel)]="fo.item3" type="email" matInput name="e1"  [pattern]="emailPattern" placeholder=" E-mail ID" ngModel required email #e1="ngModel"> 
                  </mat-form-field>
                      <div *ngIf="e1.invalid && (e1.dirty || e1.touched)">                               
                                  <mat-error *ngIf="e1.hasError('required')">
                                   E-mail is required.
                                  </mat-error>
-                                 <mat-error *ngIf="e1.hasError('email')">
-                                     Enter a valid E-mail
+                     
+                                 <mat-error *ngIf="e1.hasError('pattern')"> 
+                                    Enter a valid E-mail
                                  </mat-error>
                              </div>
                              </td>
@@ -178,5 +175,5 @@
             </form>
         </div>
     </div>
-
+    
   </div>

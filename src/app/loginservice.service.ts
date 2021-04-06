@@ -20,6 +20,7 @@ export class LoginserviceService {
   }
 
   userList:Array<any> = JSON.parse(localStorage.getItem('Users')||'{}');
+  
 
 
  logOut(){

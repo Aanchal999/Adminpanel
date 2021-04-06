@@ -12,7 +12,7 @@ import { UserDTO} from './userDTO';
 export class RegisterformComponent implements OnInit {
 
   signup:any={};
-  
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"; 
   user:any={};
  // signupForm!: FormGroup;
 
@@ -20,20 +20,35 @@ export class RegisterformComponent implements OnInit {
   
 
   ngOnInit(): void {
+
   }
   onSubmit(signupForm:NgForm)
   {
     this.user=Object.assign(this.user,signupForm.value);
    // localStorage.setItem('user',JSON.stringify(this.user));
-    this.userService.addUser(this.user);
-    this.routes.navigate(['/login']);
-    this.alert("alert", "loading component");
-  }
-  alert(arg0: string, arg1: string) {
-    throw new Error('subitted successfully');
+    this.addUser(this.user);
+   // this.routes.navigate(['/login']);
+  
   }
 
- 
+  addUser(user: any)
+  {
+    //let users=[];
+    if(localStorage.getItem(this.user.e1))
+    {
+      alert("User already exist with that e-mail");
+      //users=JSON.parse(localStorage.getItem('Users')!);
+      //users=[user,...users];//...is a spread operator that allows elements of array to expand in existing array
+    }
+    else
+    {
+      //users=[user];
+      localStorage.setItem(this.user.e1,JSON.stringify(user));
+      alert("User Registered!!");
+      this.routes.navigate(['/login']);
+    }
+
+  }
   form_el=[{'item1':'','item2':'','item3':'','item4':'','item5':'','item6':'','item7':'','item8':'Himachal Pradesh','item9':'','item10':'','item11':''}]
   result:any=[{}];
 
