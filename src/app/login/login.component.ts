@@ -33,11 +33,7 @@ export class LoginComponent implements OnInit {
       this.routes.navigate(['/dashboard']);
     }
     else{
-      this.toastrservice.error('Invalid Credentials','warning:',
-      {
-        timeOut:2000,
-
-      });
+      this.toastrservice.error('Invalid Credentials','warning:',{timeOut:2000,});
     }
   }
 

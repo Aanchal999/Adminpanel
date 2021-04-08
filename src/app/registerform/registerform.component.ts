@@ -40,30 +40,23 @@ export class RegisterformComponent implements OnInit {
     {
       
 
-      this.toastrservice.error('User already exists','warning:',
-      {
-        timeOut:2000,
-
-      });
+      this.toastrservice.error('User already exists','warning:',{timeOut:2000,});
     }
     else
     {
   
       localStorage.setItem(this.user.e1,JSON.stringify(user));
-      this.toastrservice.success('User Registered!','Note:',
-      {
-        timeOut:2000, 
-      });
+      this.toastrservice.success('User Registered!','Note:', { timeOut:2000,});
       this.routes.navigate(['/login']);
     }
 
   }
   form_el=[{'item1':'','item2':'','item3':'','item4':'','item5':'','item6':'','item7':'','item8':'Himachal Pradesh','item9':'','item10':'','item11':''}]
-  result:any=[{}];
 
 
 
-  cities!: Array<any>;
+
+  cities!: Array<string>;
   stateList:Array<any>=
   [{name:'Select State',cities:['Select City']},
   {name:'Uttar Pradesh',cities:['Kanpur','Lucknow','Bareilly']},
