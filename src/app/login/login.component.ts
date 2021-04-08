@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginserviceService } from '../loginservice.service';
 import { HeaderComponent} from '../common/header/header.component';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -12,7 +13,11 @@ import { HeaderComponent} from '../common/header/header.component';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service: LoginserviceService , private routes: Router, private headerComponent:HeaderComponent) { }
+  constructor(
+    private service: LoginserviceService , 
+    private routes: Router, 
+    private headerComponent:HeaderComponent,
+    private toastrservice:ToastrService) { }
   msg:string="";
 
   ngOnInit(): void {
@@ -21,14 +26,18 @@ export class LoginComponent implements OnInit {
 
 
 
-  check(uname: string, p: string){
-    var output = this.service.checkusernameandpassword(uname, p);
+  check(uname: string, pwd: string){
+    var output = this.service.checkcredentials(uname, pwd);
     if(output == true)
     {
       this.routes.navigate(['/dashboard']);
     }
     else{
-      this.msg ="Invalid Username or Password";
+      this.toastrservice.error('Invalid Credentials','warning:',
+      {
+        timeOut:2000,
+
+      });
     }
   }
 

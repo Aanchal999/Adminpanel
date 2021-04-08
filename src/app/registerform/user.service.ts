@@ -13,9 +13,9 @@ export class UserService {
     let users=[];
     if(localStorage.getItem('Users')){
       users=JSON.parse(localStorage.getItem('Users')||'{}');
-      users=[...users, user] as any;
+      users=[...users, user] ;
     } else{
-      users=[user] as any;
+      users=[user] ;
     }
     localStorage.setItem('Users', JSON.stringify(users));
   }

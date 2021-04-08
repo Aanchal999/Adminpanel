@@ -56,6 +56,7 @@ import { AuthGuard } from './auth.guard';
 import { RegisterformComponent } from './registerform/registerform.component';
 
 
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,7 @@ import { RegisterformComponent } from './registerform/registerform.component';
     DashboardComponent,
     UielementsComponent,
     PanelsComponent,
+    
     ResponsivetablesComponent,
     FormsComponent,
     ChartsComponent,
@@ -71,12 +73,19 @@ import { RegisterformComponent } from './registerform/registerform.component';
     LoginComponent,
 
     RegisterformComponent,
+
   ],
   imports: [
+    ToastrModule.forRoot(
+      {
+        
+      }
+    ),
     FormsModule,
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+   
     ChartsModule,
     MatRadioModule,
     MatIconModule,

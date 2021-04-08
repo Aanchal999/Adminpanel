@@ -21,7 +21,8 @@ export class PanelsComponent implements OnInit {
   {
     if(localStorage.getItem(this.users.e1))
     {
-      localStorage.setItem(this.users.e1,JSON.stringify(this.userList));
+      localStorage.setItem(this.users.e1,JSON.stringify(this.userList[0]));
+      localStorage.setItem('username',JSON.stringify(this.userList[0]));
      // localStorage.setItem('currentUser',JSON.stringify(this.userList));
       //users=JSON.parse(localStorage.getItem('Users')!);
       //users=[user,...users];//...is a spread operator that allows elements of array to expand in existing array
@@ -33,13 +34,7 @@ export class PanelsComponent implements OnInit {
     }
   }
 
- 
- 
-  
-  
-  
-  
-  
+
   
   ngOnInit(): void {
   }

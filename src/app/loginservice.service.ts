@@ -22,7 +22,7 @@ export class LoginserviceService {
 
 
 
-  checkusernameandpassword(uname:string, pwd: string)
+  checkcredentials(uname:string, pwd: string)
   {
 
   let keys : any = Object.keys(localStorage);

@@ -25,11 +25,11 @@
     <div class="col-lg-4 col-md-4 ">
         <mat-card class="profile">
             
-            <div id="image"><img mat-card-image src="assets\shinchan.png"
+            <div id="image"  *ngFor="let item of userList"><img mat-card-image src="assets\shinchan.png"
              alt="Photo of a Shiba Inu">
         
         <mat-card-content>
-            <h3>XYZ ABC</h3>
+            <h3>{{item.f1}} {{item.l1}}</h3>
             <h5>Software developer</h5>
         </mat-card-content>
     </div>

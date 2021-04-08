@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormGroup, NgForm } from '@angular/forms';
 import { UserService } from './user.service';
 import { UserDTO} from './userDTO';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-registerform',
@@ -25,7 +27,7 @@ export class RegisterformComponent implements OnInit {
   onSubmit(signupForm:NgForm)
   {
     this.user=Object.assign(this.user,signupForm.value);
-   // localStorage.setItem('user',JSON.stringify(this.user));
+
     this.addUser(this.user);
    // this.routes.navigate(['/login']);
   
@@ -33,18 +35,25 @@ export class RegisterformComponent implements OnInit {
 
   addUser(user: any)
   {
-    //let users=[];
+  
     if(localStorage.getItem(this.user.e1))
     {
-      alert("User already exist with that e-mail");
-      //users=JSON.parse(localStorage.getItem('Users')!);
-      //users=[user,...users];//...is a spread operator that allows elements of array to expand in existing array
+      
+
+      this.toastrservice.error('User already exists','warning:',
+      {
+        timeOut:2000,
+
+      });
     }
     else
     {
-      //users=[user];
+  
       localStorage.setItem(this.user.e1,JSON.stringify(user));
-      alert("User Registered!!");
+      this.toastrservice.success('User Registered!','Note:',
+      {
+        timeOut:2000, 
+      });
       this.routes.navigate(['/login']);
     }
 
@@ -54,36 +63,30 @@ export class RegisterformComponent implements OnInit {
 
 
 
-
-  /*cities:Array<any>;
-  stateList: Array<any> = [
-    { name: 'Select State', cities: ['Select City'] },
-    { name: 'Uttar Pradesh', cities: ['Noida', 'Kanpur', 'Varanasi'] },
-    { name: 'Rajasthan', cities: ['Jaipur','Kota','Udaipur'] },
-    { name: 'Tamil Nadu', cities: ['Chennai','Madurai','Vellore'] },
-    { name: 'Maharashtra', cities: ['Mumbai','Pune','Nagpur'] },
-  ];*/
-
   cities!: Array<any>;
-  stateList:Array<any>=[{name:'Select State',cities:['Select City']},
-  {name:'Uttar Pradesh',cities:['Noida','Lucknow','Varanasi']},
-  {name:'Rajasthan',cities:['Jaipur','Udaipur','Jodhpur']},
-  {name:'Himachal Pradesh',cities:['Shimla','Manali','Dalhousie']},
+  stateList:Array<any>=
+  [{name:'Select State',cities:['Select City']},
+  {name:'Uttar Pradesh',cities:['Kanpur','Lucknow','Bareilly']},
+  {name:'Maharashtra',cities:['JPune','Mumbai','Nasik']},
+  {name:'Gujarat',cities:['Vadodra','Ahemdabad','Gandhi Nagar']},
   {name:'Haryana',cities:['Gurugram','Rohtak','Faridabad']},                      
   ];
 
   changeCountry(count:Event)
   {
-    this.cities=this.stateList.find(con=>con.name==(<HTMLInputElement>count.target).value).cities;
+    this.cities=this.stateList.find
+    (con=>
+      con.name==
+      (<HTMLInputElement>count.target)
+      .value)
+      .cities;
   }
 
-
-
-  
-
-
-
-  constructor(private routes: Router,private userService:UserService) { }
+  constructor(
+    private routes: Router,
+    private userService:UserService,
+    public toastrservice: ToastrService) 
+    { }
 
 
 }
