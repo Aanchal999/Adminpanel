@@ -26,11 +26,12 @@
         <mat-card class="profile">
             
             <div id="image"  *ngFor="let item of userList"><img mat-card-image src="assets\shinchan.png"
-             alt="Photo of a Shiba Inu">
+             alt="Photo of a Aanchal">
         
         <mat-card-content>
             <h3>{{item.f1}} {{item.l1}}</h3>
-            <h5>Software developer</h5>
+            <h5>{{item.e1}}</h5>
+            <h5>{{item.f2}}</h5>
         </mat-card-content>
     </div>
        </mat-card>
@@ -82,10 +83,10 @@
                              Contact No. is required.
                             </mat-error>
                             <mat-error *ngIf="cn.hasError('minlength')">
-                                Enter valid No. of length 10.
+                                Enter valid contact no.
                             </mat-error>
                             <mat-error *ngIf="cn.hasError('maxlength')">
-                                Enter valid No. of length 10.
+                                Enter valid contact no.
                             </mat-error>
                         </div>
                         </td>
