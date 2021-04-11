@@ -9,6 +9,7 @@
  .jumbotron{
     background-color:#f2f7f8!important;
     margin-top: 20px;
+    margin-bottom: 0;
  }
 #card{
    height: 180px;
@@ -23,7 +24,7 @@
  
 
  #barchart{
-    width: 60%;
+    width: 63%;
     display: block;
     height: 480px;
     margin-right: 15px;
@@ -33,14 +34,14 @@
    float: right;
  }
 #piechart{
-   margin-left: 20px;
+   margin-left: 15px;
    margin-top: 10px;
    padding: 10px 10px 10px 10px;
    height: 240px;
 }
 
 #doughnut{
-   margin-left: 10px;
+   margin-left: 5px;
    margin-top: 10px;
    height: 230px;
    width: 98%;

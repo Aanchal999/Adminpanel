@@ -1,12 +1,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<mat-sidenav-container class="example-container">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<mat-sidenav-content>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<mat-sidenav-container >
     <mat-toolbar >
-      <div class="form-inline">
-        <ul class="navbar-nav mr-auto">
+      <div class="form-inline " >
+        <ul class="navbar-nav">
           <li>
-      <button mat-icon-button class="example-icon" (click)="sidenav.open()">
+      <button mat-icon-button class="example-icon" (click)="sidenav.open()" >
         <mat-icon>menu</mat-icon>
       </button>
       <a>My App</a>
@@ -51,7 +57,7 @@
         <mat-icon>share</mat-icon>
       </button>
     </mat-toolbar>
-</mat-sidenav-content>
+
 </mat-sidenav-container>
 
 <mat-sidenav class="sidebar" #sidenav (keydown.escape)="close()" disableClose>

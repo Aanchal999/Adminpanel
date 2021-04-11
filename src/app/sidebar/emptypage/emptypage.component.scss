@@ -1,7 +1,7 @@
 mat-card{
     border-radius: 5%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    height: 300px;
+    height: 320px;
     width: 100%;
  }
  mat-card:hover {
@@ -11,6 +11,7 @@ mat-card{
   .jumbotron{
      background-color:#f2f7f8!important;
      margin-top: 20px;
+     margin-bottom: 0;
   }
   #upgrade{
     background-color:#55ce63;

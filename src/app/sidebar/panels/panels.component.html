@@ -113,8 +113,53 @@
            
                          </td>
                          </tr>
+
+
+                         <tr>
+
+                            <td>
+                                    
+                                    <mat-form-field>
+                                        <input [(ngModel)]="item.country" matInput name="country" type="text"   placeholder="Country" ngModel required #country="ngModel">
+                                    </mat-form-field>
+                                       
+                                        <div *ngIf="country.invalid && (country.dirty || country.touched)">                               
+                                            <mat-error *ngIf="country.hasError('required')">
+                                             Country is required.
+                                            </mat-error>
+                                        </div>
+                                   
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                   <div class="form-group">
+                                        <label for="State">State</label>
+                                        <select [(ngModel)]="item.state"  name="state" class="form-control" #state="ngModel" (change)="changeCountry($event)" required>
+                                          <option *ngFor ="let count of stateList">{{count.name}}</option>
+                                        </select>
+                                        <mat-error *ngIf="state.errors  && (state.dirty || state.touched)">              
+                                             Please select your state
+                                        </mat-error>
+                                    </div>
+                                    </td>
+
+                                     
+                       <div class="form-group">
+                        <label for="City">City</label>
+                        <select [(ngModel)]="item.city" name="city" class="form-control" #city="ngModel" >
+                            <option [(ngModel)]="item.city" *ngFor ="let city of cities">{{city}}</option>
+                          </select>
+                          <mat-error  *ngIf="city.errors  && (city.dirty || city.touched)">              
+                            Please select your city
+                          </mat-error>
+                    </div>
+                        
+          
+     </tr>
          
-            <tr>
+          <!--  <tr>
                 <td>
                 <mat-form-field >
                         <input  name="p1" type="password" matInput placeholder="password"  [(ngModel)]="item.p1" ngModel required minlength="6" #p1="ngModel">
@@ -138,7 +183,7 @@
                           </mat-error>
                         </td>
                                     
-                </tr>
+                </tr>-->
               
           </table>
          <div class="row">
@@ -152,5 +197,13 @@
     
   </div>
 
-  </div>
+
+
+<!--List os registered users-->
+<app-registeredusers></app-registeredusers>
+
+</div>
+
+
+
   <app-footer></app-footer> 

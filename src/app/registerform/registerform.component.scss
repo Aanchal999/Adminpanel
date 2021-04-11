@@ -1,10 +1,12 @@
 .mat-card{
+    height: 600px;
     border-radius: 3%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     padding-top: 20px;
     padding-left: 50px;
-    margin-top: 3%;
+
     margin-bottom: 3%;
+   
     
  }
  .mat-card:hover {
@@ -12,9 +14,9 @@
   }
   
   .jumbotron{
-     background-color:#f2f7f8!important;
-     
+     background-color:#f2f7f8!important; 
      height: 100%;
+     margin: 0;
   
   }
 h2

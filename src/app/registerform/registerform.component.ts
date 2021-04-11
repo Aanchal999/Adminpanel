@@ -24,7 +24,7 @@ export class RegisterformComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  onSubmit(signupForm:NgForm)
+  onSubmit(signupForm: NgForm)
   {
     this.user=Object.assign(this.user,signupForm.value);
 

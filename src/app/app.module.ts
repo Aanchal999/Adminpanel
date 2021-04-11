@@ -57,6 +57,7 @@ import { RegisterformComponent } from './registerform/registerform.component';
 
 
 import { ToastrModule } from 'ngx-toastr';
+import { RegisteredusersComponent } from './sidebar/panles/registeredusers/registeredusers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +74,8 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
 
     RegisterformComponent,
+
+    RegisteredusersComponent,
 
   ],
   imports: [

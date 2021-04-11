@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { LoginserviceService } from 'src/app/loginservice.service';
 @Component({
   selector: 'app-panels',
   templateUrl: './panels.component.html',
@@ -8,13 +9,15 @@ import { ToastrService } from 'ngx-toastr';
 export class PanelsComponent implements OnInit {
 
   constructor(
-    private toastrservice:ToastrService
+    private toastrservice:ToastrService,
+    private loginservice : LoginserviceService
   ) { }
   
  // userList:Array<any> = JSON.parse(localStorage.getItem('Users')||'{}');
   //username:string = (localStorage.getItem('username')||'{}');
 
- 
+  headers:Array<string>=["First Name","Last Name","Phone Number","Email"]
+    username:string = (localStorage.getItem('username'));
   users = JSON.parse(localStorage.getItem('username')||'{}');
   user={};
    userList=[
@@ -24,7 +27,18 @@ export class PanelsComponent implements OnInit {
      'f2':this.users.f2,
      'a1':this.users.a1,
      'p1':this.users.p1,
-     'p2':this.users.p2}];
+     'p2':this.users.p2,
+     'city':this.users.city,
+     'country': this.users.country,
+     'state': this.users.state,
+    }];
+
+
+
+     
+
+
+
  
    onSubmit()
   {
@@ -49,6 +63,26 @@ export class PanelsComponent implements OnInit {
     }
   }
 
+
+  signup:any={};
+  cities!: Array<string>;
+  stateList:Array<any>=
+  [{name:'Select State',cities:['Select City']},
+  {name:'Uttar Pradesh',cities:['Kanpur','Lucknow','Bareilly']},
+  {name:'Maharashtra',cities:['JPune','Mumbai','Nasik']},
+  {name:'Gujarat',cities:['Vadodra','Ahemdabad','Gandhi Nagar']},
+  {name:'Haryana',cities:['Gurugram','Rohtak','Faridabad']},                      
+  ];
+
+  changeCountry(count:Event)
+  {
+    this.cities=this.stateList.find
+    (con=>
+      con.name==
+      (<HTMLInputElement>count.target)
+      .value)
+      .cities;
+  }
 
   
   ngOnInit(): void {

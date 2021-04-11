@@ -12,6 +12,7 @@
   .jumbotron{
      background-color:#f2f7f8!important;
      margin-top: 20px;
+     margin-bottom: 0;
     
   }
   #upgrade{
@@ -47,4 +48,45 @@ button{
 
 #form{
     padding-left: 5%;
+}
+
+.account{
+ 
+    margin: 30px auto 30px;
+    width: 96%;
+    
+}
+
+.table-heading{
+    color: #706368;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+
+#users{
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+#users td,#users th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#users tr:nth-child(2){
+    background-color: #bd4f4f!important;
+}
+
+#users tr:hover{
+    background-color: #ddd;
+}
+
+#users th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5a5456;
+    color: whitesmoke;
 }

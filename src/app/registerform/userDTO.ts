@@ -6,4 +6,8 @@ export interface UserDTO {
     e1:string;
     p1:string;
     p2:string;
+    city:string;
+    state: string;
+    country: string;
+    
 }

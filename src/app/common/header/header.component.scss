@@ -1,7 +1,10 @@
 .example-spacer {
     flex: 1 1 auto;
   }
-
+.navbar-nav{
+  padding-left: 0;
+  margin-left: 0;
+}
   mat-toolbar{
     background-color: #009efb!important;
     color: white;
@@ -28,9 +31,8 @@ ul{
 }
 li{
   margin-top: 10px;
-  margin-left: 0px;
-  
-  padding: 10px;
+
+  padding-left: 2px;
 }
 .fa-arrow-circle-o-left{
   margin-left: 240px;
