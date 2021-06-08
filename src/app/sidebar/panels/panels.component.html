@@ -134,7 +134,7 @@
 
                             <tr>
                                 <td>
-                                   <div class="form-group">
+                                   <!--<div class="form-group">
                                         <label for="State">State</label>
                                         <select [(ngModel)]="item.state"  name="state" class="form-control" #state="ngModel" (change)="changeCountry($event)" required>
                                           <option *ngFor ="let count of stateList">{{count.name}}</option>
@@ -142,11 +142,28 @@
                                         <mat-error *ngIf="state.errors  && (state.dirty || state.touched)">              
                                              Please select your state
                                         </mat-error>
+                                    </div>-->
+
+
+                                    <div >
+                                        <mat-form-field>
+                                        <mat-label for="State">State</mat-label>
+                                        <mat-select [(ngModel)]="item.state"  name="state"  #state="ngModel" (change)="changeCountry($event)" required>
+                                          <mat-option *ngFor ="let count of stateList"  [value]="count.name" >{{count.name}}</mat-option>
+                                        </mat-select>
+                                    
+                                        <mat-error *ngIf="state.errors  && (state.dirty || state.touched)">              
+                                             Please select your state
+                                        </mat-error>
+                                    </mat-form-field>
                                     </div>
+
+
+
                                     </td>
 
                                      
-                       <div class="form-group">
+                     <!--  <div class="form-group">
                         <label for="City">City</label>
                         <select [(ngModel)]="item.city" name="city" class="form-control" #city="ngModel" >
                             <option [(ngModel)]="item.city" *ngFor ="let city of cities">{{city}}</option>
@@ -154,7 +171,19 @@
                           <mat-error  *ngIf="city.errors  && (city.dirty || city.touched)">              
                             Please select your city
                           </mat-error>
-                    </div>
+                    </div>-->
+
+                    <div >
+                        <mat-form-field>
+                      <mat-label for="City">City</mat-label>
+                      <mat-select [(ngModel)]="signup.city" name="city" #city="ngModel" >
+                          <mat-option *ngFor ="let city of cities" >{{city}}</mat-option>
+                        </mat-select>
+                        <mat-error  *ngIf="city.errors  && (city.dirty || city.touched)">              
+                          Please select your city
+                        </mat-error>
+                      </mat-form-field>
+                  </div>
                         
           
      </tr>

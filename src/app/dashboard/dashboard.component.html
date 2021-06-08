@@ -14,12 +14,12 @@
      <h2>Dashboard</h2>
      <p>home/Dashboard</p>
   </div>
-  <div class="col-lg-3 col-md-3 col-sm-3">
+  <div class="col-lg-3 col-md-3 col-sm-12">
     <button type="button" class="btn btn-lg" id="upgrade"> Upgrade</button>
   </div>
 </div>
     <div class="row">
-      <div class="col-lg-5 col-md-5 col-sm-5 mat-card " id="card">
+      <div class="col-lg-5 col-md-5 col-sm-12 mat-card " id="card">
         <h4>Daily sale</h4>
         <div class="text-end">
           <h2 id="arrow"><i class="fa fa-arrow-up" >
@@ -33,7 +33,7 @@
     </mat-progress-bar>
       </div>
     
-      <div class="col-lg-5 col-md-5 col-sm-5 mat-card" id="card">
+      <div class="col-lg-5 col-md-5 col-sm-12 mat-card" id="card">
         <h4>Weekly sale</h4>
         <div class="text-end">
           <h2 id="arrow"><i class="fa fa-arrow-up" >
@@ -55,7 +55,7 @@
     </div>
 
     <div class="row " >
-      <div class="col-lg-4 col-md-4col-sm-4  mat-card" id="piechart">
+      <div class="col-lg-4 col-md-4col-sm-12 mat-card" id="piechart">
         <div class="row">
         <canvas baseChart 
         [data]="pieChartData" 
@@ -67,7 +67,7 @@
       </canvas>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4 mat-card" id="doughnut">
+        <div class="col-lg-4 col-md-4 col-sm-12 mat-card" id="doughnut">
           <canvas baseChart 
           [data]="doughnutChartData"
           [labels]="doughnutChartLabels"
@@ -78,7 +78,7 @@
       </div>
 
       </div>
-      <div class="mat-card col-lg-8 col-md-8 col-sm-8" id="barchart">
+      <div class="mat-card col-lg-8 col-md-8 col-sm-12" id="barchart">
         <canvas baseChart 
         [datasets]="barChartData"
         [labels]="barChartLabels"

@@ -9,18 +9,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <div class="container-fluid jumbotron" >
     <div class="row">
-        <div class="col-lg-9 col-md-9">
+        <div class="col-lg-9 col-md-9 col-sm-12">
            <h2>Charts</h2>
            <p>home/Charts</p>
         </div>
-        <div class="col-lg-3 col-md-3">
+        <div class="col-lg-3 col-md-3 col-sm-3">
           <button type="button" class="btn btn-lg" id="upgrade"> Upgrade</button>
         </div>
       </div>
 
 
 <div class="row">
-    <div class="col-lg-5 col-md-5 mat-card " id="card">
+    <div class="col-lg-5 col-md-5 col-sm-11 mat-card " id="card">
         <canvas baseChart
         [datasets]="bubbleChartData"
         [options]="bubbleChartOptions"
@@ -30,7 +30,7 @@
     
     </div>
   
-    <div class="col-lg-5 col-md-5 mat-card" id="card">
+    <div class="col-lg-5 col-md-5 col-sm-11 mat-card" id="card">
         <canvas baseChart
         [datasets]="radarChartData"
         [options]="radarChartOptions"
@@ -45,7 +45,7 @@
 
   
 <div class="row">
-    <div class="col-lg-5 col-md-5 mat-card " id="card">
+    <div class="col-lg-5 col-md-5 col-sm-11 mat-card " id="card">
       <canvas baseChart
       [data]="polarAreaChartData"
       [labels]="polarAreaChartLabels"
@@ -56,7 +56,7 @@
     
     </div>
   
-    <div class="col-lg-5 col-md-5 mat-card linechart" id="card">
+    <div class="col-lg-5 col-md-5 col-sm-11 mat-card linechart" id="card">
     
       <canvas baseChart 
       [data]="pieChartData" 
